@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.common.dao.sys.SysMenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.common.entity.sys.SysMenu">
+        <id column="menu_id" property="menuId" />
+    <result column="del_flag" property="delFlag" />
+    <result column="create_time" property="createTime" />
+    <result column="update_time" property="updateTime" />
+    <result column="create_user" property="createUser" />
+    <result column="update_user" property="updateUser" />
+    <result column="version" property="version" />
+        <result column="pid" property="pid" />
+        <result column="name" property="name" />
+        <result column="code" property="code" />
+        <result column="menu_flag" property="menuFlag" />
+        <result column="url" property="url" />
+        <result column="level" property="level" />
+        <result column="sort" property="sort" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        del_flag,
+        create_time,
+        update_time,
+        create_user,
+        update_user,
+        version,
+        menu_id, pid, name, code, menu_flag, url, level, sort
+    </sql>
+
+</mapper>

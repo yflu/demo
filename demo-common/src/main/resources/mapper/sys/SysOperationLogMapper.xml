@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.common.dao.sys.SysOperationLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.common.entity.sys.SysOperationLog">
+        <id column="log_id" property="logId" />
+    <result column="create_time" property="createTime" />
+    <result column="create_user" property="createUser" />
+        <result column="log_type" property="logType" />
+        <result column="log_name" property="logName" />
+        <result column="uri" property="uri" />
+        <result column="request_type" property="requestType" />
+        <result column="class_name" property="className" />
+        <result column="method" property="method" />
+        <result column="succeed" property="succeed" />
+        <result column="params" property="params" />
+        <result column="result" property="result" />
+        <result column="contrast" property="contrast" />
+        <result column="ip" property="ip" />
+        <result column="cost_time" property="costTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        create_time,
+        create_user,
+        log_id, log_type, log_name, uri, request_type, class_name, method, succeed, params, result, contrast, ip, cost_time
+    </sql>
+
+</mapper>

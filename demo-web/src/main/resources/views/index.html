@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>${systemName}</title>
+    <script src="${ctxPath}/js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body class="layui-layout-body">
+${welcomeTip},${shiro.principal()}
+hello,${shiro.getUser()}
+<input type="button" onclick="add()" value="新增"/>
+<input type="button" onclick="add2()" value="json新增2"/>
+<input type="button" onclick="update()" value="更新"/>
+<input type="button" onclick="update2()" value="json更新2"/>
+<input type="button" onclick="del()" value="删除"/>
+<input type="button" onclick="logout()" value="退出"/>
+</body>
+<script>
+    function add() {
+        var paramObj = new Object();
+        paramObj.account = new Date().getTime();
+        paramObj.password = "111111";
+        $.ajax({
+            type: "POST",
+            url: "/demo/user/add",
+            data: paramObj,
+            success: function (msg) {
+                console.log("Data Saved: " + msg);
+            }
+        });
+    }
+
+    function add2() {
+        var paramObj = new Object();
+        paramObj.account = new Date().getTime();
+        paramObj.password = "111111";
+        $.ajax({
+            type: "POST",
+            url: "/demo/user/add2",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(paramObj),
+            success: function (msg) {
+                console.log("Data Saved: " + msg);
+            }
+        });
+    }
+
+    function update() {
+        var paramObj = new Object();
+        paramObj.userId = 56;
+        paramObj.account = new Date().getTime();
+        paramObj.nickname = new Date().getTime();
+        $.ajax({
+            type: "POST",
+            url: "/demo/user/update",
+            dataType: "json",
+            data: paramObj,
+            success: function (msg) {
+                console.log("Data Saved: " + msg);
+            }
+        });
+    }
+
+    function update2() {
+        var paramObj = new Object();
+        paramObj.userId = 56;
+        paramObj.account = new Date().getTime();
+        paramObj.nickname = new Date().getTime();
+        $.ajax({
+            type: "POST",
+            url: "/demo/user/update2",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(paramObj),
+            success: function (msg) {
+                console.log("Data Saved: " + msg);
+            }
+        });
+    }
+
+    function del() {
+        $.ajax({
+            type: "POST",
+            url: "/demo/user/delete",
+            dataType: "json",
+            data: {userId: 77},
+            success: function (msg) {
+                console.log("Data Saved: " + msg);
+            }
+        });
+    }
+
+    function logout() {
+        window.location.href = "/demo/logout";
+    }
+</script>
+</html>

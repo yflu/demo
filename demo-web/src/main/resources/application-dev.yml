@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    druid:
+      min-idle: 5
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query-timeout: 30000
+      test-while-idle: true
+      max-active: 200
+      validation-query: SELECT 1 FROM DUAL
+      type: com.alibaba.druid.pool.DruidDataSource
+      max-wait: 60000
+      url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+      test-on-borrow: false
+      password: 123456
+      pool-prepared-statements: true
+      initial-size: 5
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      test-on-return: false
+
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 7474
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 8   #连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1  #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 5     #连接池中的最大空闲连接
+        min-idle: 0     #连接池中的最小空闲连接
+    timeout: 10000   #连接超时时间（毫秒）
+
+session:
+  redis:
+    database: 4
+    host: 127.0.0.1
+    port: 7474
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 8   #连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1  #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 5     #连接池中的最大空闲连接
+        min-idle: 0     #连接池中的最小空闲连接
+    timeout: 10000    #连接超时时间（毫秒）
