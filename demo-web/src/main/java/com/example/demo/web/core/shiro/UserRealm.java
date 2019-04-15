@@ -1,14 +1,11 @@
 package com.example.demo.web.core.shiro;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.demo.common.entity.sys.SysUser;
 import com.example.demo.common.service.sys.ISysUserService;
 import com.example.demo.core.util.SpringContextHolder;
 import com.example.demo.web.core.shiro.model.ShiroUser;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.authc.*;
-import org.apache.shiro.authc.credential.CredentialsMatcher;
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -28,8 +25,7 @@ public class UserRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken)
             throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
-        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<SysUser>().eq("account", token.getUsername());
-        SysUser user = SpringContextHolder.getBean(ISysUserService.class).getOne(queryWrapper);
+        SysUser user = SpringContextHolder.getBean(ISysUserService.class).getByAccount(token.getUsername());
         ShiroUser shiroUser = ShiroKit.createShiroUser(user);
         return getAuthInfo(shiroUser, user, super.getName());
     }
@@ -53,14 +49,14 @@ public class UserRealm extends AuthorizingRealm {
     /**
      * 设置认证加密方式
      */
-    @Override
+    /*@Override
     public void setCredentialsMatcher(CredentialsMatcher credentialsMatcher) {
         HashedCredentialsMatcher md5CredentialsMatcher = new HashedCredentialsMatcher();
         md5CredentialsMatcher.setHashAlgorithmName(ShiroKit.hashAlgorithmName);
         md5CredentialsMatcher.setHashIterations(ShiroKit.hashIterations);
         super.setCredentialsMatcher(md5CredentialsMatcher);
     }
-
+*/
     /**
      * 获取shiro的认证信息
      */

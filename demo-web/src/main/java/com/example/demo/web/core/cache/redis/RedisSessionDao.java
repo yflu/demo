@@ -31,7 +31,7 @@ public class RedisSessionDao extends AbstractSessionDAO {
 
     private final String PREFIX = "shiro_redis_session:";
 
-    @Resource(name = "redisTemplate_session")
+    @Resource(name = "redisTemplate_shiro")
     private RedisTemplate redisTemplate;
     @Autowired
     private SysProperties sysProperties;

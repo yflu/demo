@@ -102,7 +102,7 @@ public class JwtTokenUtil {
         final Date createdDate = new Date();
         final Date expirationDate = new Date(createdDate.getTime() + JwtConstants.EXPIRATION * 1000);
 
-        return Jwts.builder()
+        return JwtConstants.AUTH_HEADER_FLAG + Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
                 .setIssuedAt(createdDate)

@@ -4,19 +4,46 @@ import com.example.demo.core.exception.AbstractBaseExceptionEnum;
 
 public enum CoreExceptionEnum implements AbstractBaseExceptionEnum {
 
-    INVLIDE_DATE_STRING(400, "输入日期格式不对"),
-    NO_CURRENT_USER(700, "当前没有登录的用户"),
-    INIT_TABLE_EMPTY_PARAMS(701, "初始化数据库，存在为空的字段"),
+    /**
+     * 基础
+     */
+    SUCCESS(0, "请求成功"),
+    SERVER_ERROR(1, "未知错误"),
+
+    REQUEST_REPEAT(100, "重复请求"),
+    REQUEST_PARAM_ERROR(101, "请求参数异常"),
+
+    DATA_NOT_EXIST(110, "数据不存在"),
+    DATA_ALREADY_EXIST(111, "数据已存在"),
+    ASYNC_ERROR(112, "数据在被别人修改，请稍后重试"),
+
+    /**
+     * 鉴权
+     */
+    TOKEN_ERROR(200, "无效的token"),
+    TOKEN_EXPIRED(201, "token过期"),
+    SIGN_ERROR(202, "无效签名"),
+
+    /**
+     * 权限
+     */
+    AUTH_ERROR(300, "账号密码错误"),
+    NO_CURRENT_USER(301, "当前没有登录的用户"),
+    NO_PERMITION(302, "权限不足"),
+
+    /**
+     * 文件上传
+     */
+    UPLOAD_ERROR(400, "上传出错"),
+    FILE_BIG(401, "文件大小超出上限"),
+    FILE_READING_ERROR(403, "FILE_READING_ERROR!"),
+    FILE_NOT_FOUND(404, "FILE_NOT_FOUND!"),
+
+    /**
+     * 其他
+     */
     WRITE_ERROR(500, "渲染界面错误"),
-    ENCRYPT_ERROR(600, "加解密错误"),
-    FILE_READING_ERROR(400, "FILE_READING_ERROR!"),
-    FILE_NOT_FOUND(400, "FILE_NOT_FOUND!"),
-    FIELD_VALIDATE_ERROR(700, "数据库字段与实体字段不一致!"),
-    PAGE_NULL(404, "请求页面不存在"),
-    IO_ERROR(500, "流读取异常"),
-    SERVICE_ERROR(500, "服务器异常"),
-    REMOTE_SERVICE_NULL(404, "远程服务不存在"),
-    ASYNC_ERROR(5000, "数据在被别人修改，请稍后重试");
+    ENCRYPT_ERROR(501, "加解密错误");
 
     private Integer code;
     private String message;

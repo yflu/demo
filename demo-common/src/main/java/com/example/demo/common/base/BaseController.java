@@ -1,5 +1,6 @@
 package com.example.demo.common.base;
 
+import com.example.demo.core.common.model.response.ResponseUtil;
 import com.example.demo.core.common.model.response.SuccessResponseData;
 import com.example.demo.core.exception.ServiceException;
 import com.example.demo.core.exception.enums.CoreExceptionEnum;
@@ -22,7 +23,7 @@ public class BaseController {
     protected final String REDIRECT = "redirect:";
     protected final String FORWARD = "forward:";
 
-    protected static SuccessResponseData SUCCESS_TIP = new SuccessResponseData();
+    protected static SuccessResponseData SUCCESS = ResponseUtil.SUCCESS;
 
     protected HttpServletRequest getHttpServletRequest() {
         return HttpContext.getRequest();

@@ -1,8 +1,8 @@
 package com.example.demo.web.core.interceptor;
 
 import com.example.demo.core.common.model.response.ErrorResponseData;
+import com.example.demo.core.exception.enums.CoreExceptionEnum;
 import com.example.demo.core.util.RenderUtil;
-import com.example.demo.web.core.exception.BizExceptionEnum;
 import com.example.demo.web.core.jwt.JwtConstants;
 import com.example.demo.web.core.jwt.JwtTokenUtil;
 import io.jsonwebtoken.JwtException;
@@ -38,20 +38,19 @@ public class RestApiInteceptor extends HandlerInterceptorAdapter {
             try {
                 boolean flag = JwtTokenUtil.isTokenExpired(authToken);
                 if (flag) {
-                    RenderUtil.renderJson(response, new ErrorResponseData(BizExceptionEnum.TOKEN_EXPIRED.getCode(), BizExceptionEnum.TOKEN_EXPIRED.getMessage()));
+                    RenderUtil.renderJson(response, new ErrorResponseData(CoreExceptionEnum.TOKEN_EXPIRED.getCode(), CoreExceptionEnum.TOKEN_EXPIRED.getMessage()));
                     return false;
                 }
             } catch (JwtException e) {
                 //有异常就是token解析失败
-                RenderUtil.renderJson(response, new ErrorResponseData(BizExceptionEnum.TOKEN_ERROR.getCode(), BizExceptionEnum.TOKEN_ERROR.getMessage()));
+                RenderUtil.renderJson(response, new ErrorResponseData(CoreExceptionEnum.TOKEN_ERROR.getCode(), CoreExceptionEnum.TOKEN_ERROR.getMessage()));
                 return false;
             }
         } else {
             //header没有带Bearer字段
-            RenderUtil.renderJson(response, new ErrorResponseData(BizExceptionEnum.TOKEN_ERROR.getCode(), BizExceptionEnum.TOKEN_ERROR.getMessage()));
+            RenderUtil.renderJson(response, new ErrorResponseData(CoreExceptionEnum.TOKEN_ERROR.getCode(), CoreExceptionEnum.TOKEN_ERROR.getMessage()));
             return false;
         }
         return true;
     }
-
 }

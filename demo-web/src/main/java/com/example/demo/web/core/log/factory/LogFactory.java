@@ -3,8 +3,8 @@ package com.example.demo.web.core.log.factory;
 import com.alibaba.fastjson.JSON;
 import com.example.demo.common.entity.sys.SysLoginLog;
 import com.example.demo.common.entity.sys.SysOperationLog;
-import com.example.demo.core.constant.LogSucceed;
-import com.example.demo.core.constant.LogType;
+import com.example.demo.core.constant.enums.LogSucceed;
+import com.example.demo.core.constant.enums.LogType;
 
 import java.util.Date;
 

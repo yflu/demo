@@ -13,4 +13,6 @@ public interface JwtConstants {
 
     String AUTH_PATH = "/api/auth";
 
+    String AUTH_HEADER_FLAG = "Bearer ";
+
 }

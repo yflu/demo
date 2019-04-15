@@ -21,7 +21,7 @@ import org.springframework.data.redis.core.RedisTemplate;
  */
 @Configuration
 @AutoConfigureAfter(RedisAutoConfiguration.class)
-public class SessionRedisConfig {
+public class ShiroRedisConfig {
 
     @Value("${session.redis.database}")
     private int database;
@@ -42,23 +42,23 @@ public class SessionRedisConfig {
     @Value("${session.redis.timeout}")
     private long timeout;
 
-    @Bean("redisConfiguration_session")
+    @Bean("redisConfiguration_shiro")
     public RedisStandaloneConfiguration standaloneConfiguration() {
         return RedisConfigUtil.redisStandaloneConfiguration(database, host, port, password);
     }
 
-    @Bean("redisConnectionFactory_session")
-    public RedisConnectionFactory lettuceConnectionFactory(@Qualifier("redisConfiguration_session") RedisStandaloneConfiguration configuration) {
+    @Bean("redisConnectionFactory_shiro")
+    public RedisConnectionFactory lettuceConnectionFactory(@Qualifier("redisConfiguration_shiro") RedisStandaloneConfiguration configuration) {
         return RedisConfigUtil.redisConnectionFactory(configuration, maxActive, maxWait, maxIdle, minIdle, timeout);
     }
 
-    @Bean("redisCacheManager_session")
-    public RedisCacheManager redisCacheManager(@Qualifier("redisConnectionFactory_session") RedisConnectionFactory factory) {
+    @Bean("redisCacheManager_shiro")
+    public RedisCacheManager redisCacheManager(@Qualifier("redisConnectionFactory_shiro") RedisConnectionFactory factory) {
         return RedisConfigUtil.redisCacheManager(factory);
     }
 
-    @Bean("redisTemplate_session")
-    public RedisTemplate sessionRedisTemplate(@Qualifier("redisConnectionFactory_session") RedisConnectionFactory factory) {
+    @Bean("redisTemplate_shiro")
+    public RedisTemplate sessionRedisTemplate(@Qualifier("redisConnectionFactory_shiro") RedisConnectionFactory factory) {
         return RedisConfigUtil.createRedisTemplate(factory, new ObjectSerializer());
     }
 }

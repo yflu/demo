@@ -1,13 +1,15 @@
 package com.example.demo.core.common.model.response;
 
+import com.example.demo.core.exception.enums.CoreExceptionEnum;
+
 public class SuccessResponseData extends ResponseData {
 
     public SuccessResponseData() {
-        super(true, DEFAULT_SUCCESS_CODE, DEFAULT_SUCCESS_MESSAGE, null);
+        super(true, CoreExceptionEnum.SUCCESS.getCode(), CoreExceptionEnum.SUCCESS.getMessage(), null);
     }
 
     public SuccessResponseData(Object object) {
-        super(true, DEFAULT_SUCCESS_CODE, DEFAULT_SUCCESS_MESSAGE, object);
+        super(true, CoreExceptionEnum.SUCCESS.getCode(), CoreExceptionEnum.SUCCESS.getMessage(), object);
     }
 
     public SuccessResponseData(Integer code, String message, Object object) {

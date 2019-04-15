@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.demo.core.constant;
+package com.example.demo.core.constant.enums;
 
 /**
  * 业务是否成功的日志记录

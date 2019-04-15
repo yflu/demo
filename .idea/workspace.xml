@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef3d7b7c-cb13-48fb-9d1c-9b46d6db731f" name="Default Changelist" comment="" />
+    <list default="true" id="ef3d7b7c-cb13-48fb-9d1c-9b46d6db731f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ResponseUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/SessionConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/LoginType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/exception/factory/ServiceExceptionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/SessionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/ApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/RetryLimitHashedCredentialsMatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/AdminRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/CustomizedModularRealmAuthenticator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/CustomizedToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/base/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/base/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/service/sys/ISysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/service/sys/ISysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/service/sys/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/service/sys/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/demo-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/demo-core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ErrorResponseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ErrorResponseData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ResponseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ResponseData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/SuccessResponseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/SuccessResponseData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/DataStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/DataStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/LogSucceed.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/LogSucceed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/LogType.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/LogType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/exception/enums/CoreExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/exception/enums/CoreExceptionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisSessionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisSessionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/SessionRedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/ShiroRedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/exception/BizExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/exception/BizExceptionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/interceptor/RestApiInteceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/interceptor/RestApiInteceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/jwt/JwtConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/jwt/JwtConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/jwt/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/jwt/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogTaskFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogTaskFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/UserRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/util/ShiroKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/util/ShiroKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/resources/ehcache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/resources/ehcache.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/main/resources/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/main/resources/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTemplateTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTemplateTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/demo-common/target/" />
@@ -16,103 +57,110 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/BodyReaderRequestWrapper.java">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/CustomizedToken.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/LogAop.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="84" column="61" lean-forward="true" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/GlobalExceptionHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/Contrast.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/aop/ContrastBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/base/BaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-215">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="-95">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#729#730#0" expanded="true" />
-                <element signature="e#777#778#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
+                <element signature="e#548#549#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogTaskFactory.java">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/CustomizedModularRealmAuthenticator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+            <state relative-caret-position="128">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-web/src/main/resources/views/index.html">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/RetryLimitHashedCredentialsMatcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-89">
+              <caret line="29" column="68" lean-forward="true" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/SessionConstant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/ApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2842#2843#0" expanded="true" />
+                <element signature="e#2872#2873#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="84" column="23" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/EhcacheTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/resources/ehcache.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/mp/MybatisPlusConfig.java">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/EhCacheConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+            <state relative-caret-position="155">
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/AdminRealm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding>
-                <element signature="e#1319#1320#0" expanded="true" />
-                <element signature="e#1364#1365#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,21 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>）</find>
-      <find>shiroDbRealm</find>
-      <find>RedisCacheManager</find>
-      <find>redisCacheManager</find>
-      <find>shiroFilterChainDefinition</find>
-      <find>ShiroFilterChainDefinition</find>
-      <find>re</find>
-      <find>redisTpl</find>
-      <find>@DependsOn</find>
-      <find>@AutoConfigureAfter</find>
-      <find>sysProperties</find>
-      <find>biz</find>
-      <find>logger</find>
-      <find>redisTemplate_biz</find>
-      <find>NAMES_DELIMETER</find>
       <find>debug</find>
       <find>ParserConfig.getGlobalInstance().setAutoTypeSupport(true);</find>
       <find>SimpleCookie</find>
@@ -160,6 +193,21 @@
       <find>getIP</find>
       <find>sb</find>
       <find>@Order</find>
+      <find>SuccessResponseData</find>
+      <find>AbstractBaseExceptionEnum</find>
+      <find>WRITE_ERROR</find>
+      <find>FILE_READING_ERROR</find>
+      <find>NOT_LOGIN</find>
+      <find>NO_PERMITION</find>
+      <find>PARAM_ERROR</find>
+      <find>exceptionClazz</find>
+      <find>CacheManager</find>
+      <find>passwordRetryCache</find>
+      <find>this.logger</find>
+      <find>redisManager</find>
+      <find>_session</find>
+      <find>SESSION_KEY_LOGIN_TYPE</find>
+      <find>ehcache.xml</find>
     </findStrings>
     <replaceStrings>
       <replace>com.example.demo.common</replace>
@@ -175,65 +223,69 @@
       <replace>(</replace>
       <replace>redisTemplate</replace>
       <replace>)</replace>
-      <replace>log</replace>
       <replace>session</replace>
       <replace>debug</replace>
+      <replace>log</replace>
+      <replace>_shiro</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/redis/RedisSessionDAO.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/redis/SessionRedisService.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/resources/application-dev.yml" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/CollectionSerializer.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/beetl/ShiroExt.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/resources/logback-spring.xml" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/SerializeUtils.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/util/a.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/templates/SessionRedisConfig.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/RedisObjectSerializer.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/RedisSessionDao.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisSessionDao.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroKit.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroSessionManager.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTemplateTests.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisService.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/JdkRedisSerializer.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/kryoSerializer.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/MyKryoSerializer.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/SerializeUtils.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/ObjectSerializer.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/a/ObjectSerializer.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/a/MultiClassLoaderObjectInputStream.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/session/MultiClassLoaderObjectInputStream.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/SpringRedisConfig.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/SessionRedisConfig.java" />
-        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/xss/XssFilter.java" />
-        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/serializers/FastJson2JsonRedisSerializer.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/util/RedisConfigUtil.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/web/WebConfig.java" />
-        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/ToolUtil.java" />
-        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/HttpContext.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogFactory.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogTaskFactory.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/config/MybatisPlusFieldHandler.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/mp/MybatisPlusFieldHandler.java" />
-        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/CorsFilter.java" />
-        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/BodyReaderRequestWrapper.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/Application.java" />
-        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/InterfaceFilter.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/base/BaseController.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/resources/views/index.html" />
         <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/Contrast.java" />
         <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/mp/MybatisPlusConfig.java" />
-        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/UserController.java" />
         <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/LogAop.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/BodyReaderRequestWrapper.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/CompareObejct.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/CompareObejct.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/CompareObejctTest.java" />
+        <option value="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/service/sys/ISysUserService.java" />
+        <option value="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/service/sys/impl/SysUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/exception/BizExceptionEnum.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/util/ShiroKit.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/SuccessResponseData.java" />
+        <option value="$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/base/BaseController.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/jwt/JwtTokenUtil.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/jwt/JwtConstants.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/interceptor/RestApiInteceptor.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ResponseData.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ResponseUtil.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/exception/factory/ServiceExceptionUtil.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/exception/factory/ServiceExceptionFactory.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/exception/enums/CoreExceptionEnum.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/resources/views/index.html" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ErrorResponseData.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/UserRealm.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisCacheManager.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisCache.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/BcryptPasswordService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/SessionHandler.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/ShiroRedisConfig.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisSessionDao.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTemplateTests.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/LoginUtils.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/GlobalExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/LoginType.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/MyModularRealmAuthorizer.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/AbstractMzAuthorizingRealm.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/LoginType.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/SessionUtil.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/CustomizedToken.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/CustomizedModularRealmAuthenticator.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/AdminRealm.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/CustomizedModularRealmAuthenticator.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/AdminRealm.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/EhcacheTests.java" />
+        <option value="$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/SessionConstant.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/RetryLimitHashedCredentialsMatcher.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/ApiController.java" />
+        <option value="$PROJECT_DIR$/demo-web/src/main/resources/ehcache.xml" />
       </list>
     </option>
   </component>
@@ -256,6 +308,15 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Profiles" type="6783ec58:MavenProjectsStructure$ProfilesNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
@@ -266,12 +327,15 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,6 +401,27 @@
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="demo-core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -377,7 +462,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -387,8 +472,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -398,8 +483,9 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="xss" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="response" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -409,7 +495,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="serializers" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -419,8 +505,50 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="serializers" type="462c0819:PsiDirectoryNode" />
-              <item name="session" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -497,7 +625,101 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="interceptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="jwt" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -575,6 +797,18 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+              <item name="multRealm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="demo-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -627,11 +861,41 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.shiro:shiro-core:1.4.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.shiro:shiro-core:1.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="shiro-core-1.4.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.shiro:shiro-core:1.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="shiro-core-1.4.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.shiro:shiro-core:1.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="shiro-core-1.4.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+              <item name="authc" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -642,11 +906,12 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555060275237" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555316952695" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="E:/mybatis-plus-samples" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -654,8 +919,22 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\demo\demo-web\src\main\resources" />
+      <recent name="D:\workspace\demo\demo-common\src\main\resources" />
+      <recent name="D:\workspace\demo\demo-common\src\main\java\com\example\demo\common" />
+      <recent name="D:\workspace\demo\demo-common\src\main\resources\templates" />
+      <recent name="D:\workspace\demo\demo-common\src\main\resources\mapper\sys" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.demo.web" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.demo.web" />
+      <recent name="com.example.demo.core.constant" />
+      <recent name="com.example.demo.web.controller" />
+      <recent name="com.example.demo.core.util" />
+      <recent name="com.example.demo.web.core.cache.redis" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\demo\demo-core\src\main\java\com\example\demo\core\config\filter" />
@@ -663,20 +942,6 @@
       <recent name="D:\workspace\demo\demo-web\src\main\resources" />
       <recent name="D:\workspace\demo\demo-web\src\main\java\com\example\demo\web\core\shiro" />
       <recent name="D:\workspace\demo\demo-web\src\main\java\com\example\demo\web\core\shiro\redis" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.demo.web.core.cache.redis" />
-      <recent name="com.example.demo.web" />
-      <recent name="com.example.demo.web.core.cache" />
-      <recent name="com.example.demo.web.core.interceptor" />
-      <recent name="com.example.demo.web.core.shrio" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\workspace\demo\demo-web\src\main\resources" />
-      <recent name="D:\workspace\demo\demo-common\src\main\resources" />
-      <recent name="D:\workspace\demo\demo-common\src\main\java\com\example\demo\common" />
-      <recent name="D:\workspace\demo\demo-common\src\main\resources\templates" />
-      <recent name="D:\workspace\demo\demo-common\src\main\resources\mapper\sys" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -691,8 +956,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
-    <configuration name="RedisTemplateTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.EhcacheTests.test">
+    <configuration name="CompareObejctTest.comparer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo-web" />
       <extension name="coverage">
         <pattern>
@@ -701,8 +966,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.demo.web" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.RedisTemplateTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.CompareObejctTest" />
+      <option name="METHOD_NAME" value="comparer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EhcacheTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.web" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.EhcacheTests" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -718,22 +1000,6 @@
       <option name="PACKAGE_NAME" value="com.example.demo.web" />
       <option name="MAIN_CLASS_NAME" value="com.example.demo.web.RedisTemplateTests" />
       <option name="METHOD_NAME" value="set" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RedisTemplateTests.set2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.web" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.RedisTemplateTests" />
-      <option name="METHOD_NAME" value="set2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -771,17 +1037,17 @@
     <list>
       <item itemvalue="JUnit.RedisTests.contextLoads" />
       <item itemvalue="JUnit.RedisTemplateTests.set" />
-      <item itemvalue="JUnit.RedisTemplateTests.set2" />
-      <item itemvalue="JUnit.RedisTemplateTests" />
       <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="JUnit.CompareObejctTest.comparer" />
+      <item itemvalue="JUnit.EhcacheTests.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EhcacheTests.test" />
         <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="JUnit.CompareObejctTest.comparer" />
         <item itemvalue="JUnit.RedisTests.contextLoads" />
         <item itemvalue="JUnit.RedisTemplateTests.set" />
-        <item itemvalue="JUnit.RedisTemplateTests.set2" />
-        <item itemvalue="JUnit.RedisTemplateTests" />
       </list>
     </recent_temporary>
   </component>
@@ -805,20 +1071,35 @@
       <workItem from="1554780217700" duration="15513000" />
       <workItem from="1554856257443" duration="31819000" />
       <workItem from="1554943560491" duration="30718000" />
-      <workItem from="1555029586997" duration="27589000" />
+      <workItem from="1555029586997" duration="29471000" />
+      <workItem from="1555287754466" duration="19000" />
+      <workItem from="1555290527780" duration="22174000" />
     </task>
+    <task id="LOCAL-00001" summary="compare">
+      <created>1555062127944</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555062127944</updated>
+    </task>
+    <task id="LOCAL-00002" summary="compare">
+      <created>1555291467590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555291467590</updated>
+    </task>
+    <task id="LOCAL-00003" summary="compare">
+      <created>1555291479675</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555291479675</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedisTemplateTests_set2 - 2019.04.12 at 09h 46m 59s.xml">
-      <configuration name="RedisTemplateTests.set2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedisTemplateTests_set2 - 2019.04.12 at 10h 02m 09s.xml">
-      <configuration name="RedisTemplateTests.set2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedisTemplateTests_set2 - 2019.04.12 at 10h 02m 57s.xml">
-      <configuration name="RedisTemplateTests.set2" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RedisTemplateTests_set2 - 2019.04.12 at 10h 18m 12s.xml">
       <configuration name="RedisTemplateTests.set2" configurationId="JUnit" />
     </history-entry>
@@ -840,9 +1121,18 @@
     <history-entry file="RedisTests_contextLoads - 2019.04.12 at 11h 57m 27s.xml">
       <configuration name="RedisTests.contextLoads" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CompareObejctTest_comparer - 2019.04.15 at 09h 19m 21s.xml">
+      <configuration name="CompareObejctTest.comparer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CompareObejctTest_comparer - 2019.04.15 at 09h 20m 14s.xml">
+      <configuration name="CompareObejctTest.comparer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CompareObejctTest_comparer - 2019.04.15 at 09h 21m 11s.xml">
+      <configuration name="CompareObejctTest.comparer" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134832000" />
+    <option name="totallyTimeSpent" value="158907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -857,7 +1147,7 @@
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27936962" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28366762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -867,8 +1157,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962447" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32962447" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3908206" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33008358" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.38997215" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Spring" order="6" weight="0.32962447" />
@@ -879,11 +1169,11 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32962447" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32962447" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32729805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.16189112" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.16189112" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -892,7 +1182,7 @@
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27936962" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28366762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -902,8 +1192,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962447" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32962447" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3908206" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33008358" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.38997215" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Spring" order="6" weight="0.32962447" />
@@ -914,7 +1204,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32962447" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32962447" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32729805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -930,490 +1220,436 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="compare" />
+    <option name="LAST_COMMIT_MESSAGE" value="compare" />
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo-web/pom.xml">
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/exception/enums/CoreExceptionEnum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/session/mgt/SimpleSession.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="363" selection-start-line="363" selection-end-line="363" />
+        <state relative-caret-position="223">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="15" />
+          <folding>
+            <element signature="e#1098#1099#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/MyKryoSerializer.java">
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="150">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/resources/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="63" column="34" lean-forward="true" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ResponseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-277">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/response/ErrorResponseData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/serializers/RedisObjectSerializer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/realm/AuthenticatingRealm.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTemplateTests.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/session/mgt/SessionManager.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="120">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/session/mgt/eis/AbstractSessionDAO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/cache/CacheManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.5.RELEASE/spring-data-redis-2.1.5.RELEASE.jar!/org/springframework/data/redis/cache/RedisCache.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
+        <state relative-caret-position="100">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisCacheManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisSessionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/xss/XssFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/serializers/session/MultiClassLoaderObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/serializers/session/ObjectSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-649">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/serializers/FastJson2JsonRedisSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/util/RedisConfigUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="99" column="73" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/SessionRedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/SpringRedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1371">
-          <caret line="152" column="25" lean-forward="true" selection-start-line="152" selection-start-column="25" selection-end-line="152" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/EhCacheConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/common/Const.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/ToolUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="110" column="25" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/LogManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/entity/sys/SysOperationLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="e#1947#1948#0" expanded="true" />
-            <element signature="e#1981#1982#0" expanded="true" />
-            <element signature="e#2014#2015#0" expanded="true" />
-            <element signature="e#2044#2045#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
-            <element signature="e#2128#2129#0" expanded="true" />
-            <element signature="e#2161#2162#0" expanded="true" />
-            <element signature="e#2191#2192#0" expanded="true" />
-            <element signature="e#2237#2238#0" expanded="true" />
-            <element signature="e#2275#2276#0" expanded="true" />
-            <element signature="e#2304#2305#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
-            <element signature="e#2368#2369#0" expanded="true" />
-            <element signature="e#2398#2399#0" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
-            <element signature="e#2469#2470#0" expanded="true" />
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2569#2570#0" expanded="true" />
-            <element signature="e#2604#2605#0" expanded="true" />
-            <element signature="e#2636#2637#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#2728#2729#0" expanded="true" />
-            <element signature="e#2760#2761#0" expanded="true" />
-            <element signature="e#2789#2790#0" expanded="true" />
-            <element signature="e#2833#2834#0" expanded="true" />
-            <element signature="e#2869#2870#0" expanded="true" />
-            <element signature="e#2902#2903#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2978#2979#0" expanded="true" />
-            <element signature="e#3016#3017#0" expanded="true" />
-            <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#3077#3078#0" expanded="true" />
-            <element signature="e#3121#3122#0" expanded="true" />
-            <element signature="e#3157#3158#0" expanded="true" />
-            <element signature="e#3189#3190#0" expanded="true" />
-            <element signature="e#3218#3219#0" expanded="true" />
-            <element signature="e#3262#3263#0" expanded="true" />
-            <element signature="e#3298#3299#0" expanded="true" />
-            <element signature="e#3332#3333#0" expanded="true" />
-            <element signature="e#3363#3364#0" expanded="true" />
-            <element signature="e#3411#3412#0" expanded="true" />
-            <element signature="e#3451#3452#0" expanded="true" />
-            <element signature="e#3479#3480#0" expanded="true" />
-            <element signature="e#3504#3505#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#3568#3569#0" expanded="true" />
-            <element signature="e#3600#3601#0" expanded="true" />
-            <element signature="e#3631#3632#0" expanded="true" />
-            <element signature="e#3677#3678#0" expanded="true" />
-            <element signature="e#3717#3718#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/HttpContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="49" />
-          <folding>
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#2239#2240#0" expanded="true" />
-            <element signature="e#2308#2309#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/util/ShiroKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#1468#1469#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/entity/sys/SysUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/listener/ConfigListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/UserRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-164">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/mp/MybatisPlusFieldHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/CustomMetaObjectHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1180">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/CorsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/interceptor/RestApiInteceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/web/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/interceptor/UserFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/xss/XssHttpServletRequestWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/InterfaceFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="136">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/Application.java">
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/xss/XssFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state relative-caret-position="376">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/LoginController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/authc/credential/HashedCredentialsMatcher.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-614">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="560">
+          <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/config/filter/BodyReaderRequestWrapper.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state>
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/java/jdk1.8.0_40/src.zip!/java/lang/reflect/Type.java">
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/SessionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.56/fastjson-1.2.56.jar!/com/alibaba/fastjson/JSON.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="369" column="24" selection-start-line="369" selection-start-column="24" selection-end-line="369" selection-end-column="24" />
-          <folding>
-            <element signature="e#3555#3556#0" expanded="true" />
-            <element signature="e#3613#3614#0" expanded="true" />
-            <element signature="e#15030#15031#0" expanded="true" />
-            <element signature="e#15077#15078#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-common/src/main/java/com/example/demo/common/base/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-215">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="80">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/common/model/aop/ContrastBean.java">
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/BcryptPasswordService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        <state relative-caret-position="128">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.5.RELEASE/spring-data-redis-2.1.5.RELEASE.jar!/org/springframework/data/redis/cache/RedisCacheManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/RedisSessionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/LoginUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#340#369#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/log/factory/LogTaskFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/mp/MybatisPlusConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding>
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/resources/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/Contrast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="136">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/GlobalExceptionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
+        <state relative-caret-position="265">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/redis/config/ShiroRedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="-146">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/aop/LogAop.java">
+    <entry file="file://$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/RedisTemplateTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="84" column="61" lean-forward="true" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+        <state relative-caret-position="220">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/util/ShiroKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/UserRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/AbstractMzAuthorizingRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/MyModularRealmAuthorizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/DataStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/LogSucceed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/LogType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/enums/LoginType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/authc/UsernamePasswordToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#3396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/util/SessionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/authc/pam/ModularRealmAuthenticator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/AdminRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/CustomizedModularRealmAuthenticator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.1.5.RELEASE/spring-context-support-5.1.5.RELEASE.jar!/org/springframework/cache/ehcache/EhCacheManagerFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-ehcache/1.4.0/shiro-ehcache-1.4.0.jar!/org/apache/shiro/cache/ehcache/EhCacheManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/cache/EhCacheConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/cache/Cache.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/RetryLimitHashedCredentialsMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-89">
+          <caret line="29" column="68" lean-forward="true" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="84" column="23" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-core/src/main/java/com/example/demo/core/constant/SessionConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/controller/ApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2842#2843#0" expanded="true" />
+            <element signature="e#2872#2873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/java/com/example/demo/web/core/shiro/multRealm/CustomizedToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/test/java/com/example/demo/web/EhcacheTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-web/src/main/resources/ehcache.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
         </state>
       </provider>
     </entry>

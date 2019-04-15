@@ -18,7 +18,7 @@ public class RedisTemplateTests {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @Resource(name = "redisTemplate_session")
+    @Resource(name = "redisTemplate_shiro")
     private RedisTemplate bizRedisTemplate;
 
     @Test

@@ -8,7 +8,8 @@ import com.example.demo.common.service.sys.ISysUserService;
 import com.example.demo.core.common.annotion.BussinessLog;
 import com.example.demo.core.common.model.response.SuccessResponseData;
 import com.example.demo.core.exception.ServiceException;
-import com.example.demo.web.core.exception.BizExceptionEnum;
+import com.example.demo.core.exception.enums.CoreExceptionEnum;
+import com.example.demo.core.exception.factory.ServiceExceptionFactory;
 import com.example.demo.web.core.log.LogObjectHolder;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,13 +73,13 @@ public class UserController {
     public Object update(SysUser user) {
         SysUser old = sysUserService.getById(user.getUserId());
         if (old == null) {
-            throw new ServiceException(BizExceptionEnum.NO_PERMITION.getCode(), "用户不存在");
+            throw ServiceExceptionFactory.createException(CoreExceptionEnum.DATA_NOT_EXIST);
         }
         LogObjectHolder.getInstance().set(old);
         user.setVersion(old.getVersion());
         if (sysUserService.updateById(user))
             return user;
-        throw new ServiceException(BizExceptionEnum.TOKEN_EXPIRED.getCode(), "版本号不一致");
+        throw ServiceExceptionFactory.createException(CoreExceptionEnum.ASYNC_ERROR);
     }
 
     @RequestMapping("/update2")
@@ -87,13 +88,13 @@ public class UserController {
     public Object update2(@RequestBody SysUser user) {
         SysUser old = sysUserService.getById(user.getUserId());
         if (old == null) {
-            throw new ServiceException(BizExceptionEnum.NO_PERMITION.getCode(), "用户不存在");
+            throw new ServiceException(CoreExceptionEnum.NO_PERMITION.getCode(), "用户不存在");
         }
         LogObjectHolder.getInstance().set(old);
         user.setVersion(old.getVersion());
         if (sysUserService.updateById(user))
             return user;
-        throw new ServiceException(BizExceptionEnum.TOKEN_EXPIRED.getCode(), "版本号不一致");
+        throw new ServiceException(CoreExceptionEnum.TOKEN_EXPIRED.getCode(), "版本号不一致");
     }
 
     @RequestMapping("/delete")
@@ -102,6 +103,6 @@ public class UserController {
     public Object delete(Long userId) {
         if (sysUserService.removeById(userId))
             return new SuccessResponseData();
-        throw new ServiceException(BizExceptionEnum.TOKEN_EXPIRED.getCode(), "版本号不一致");
+        throw new ServiceException(CoreExceptionEnum.TOKEN_EXPIRED.getCode(), "版本号不一致");
     }
 }

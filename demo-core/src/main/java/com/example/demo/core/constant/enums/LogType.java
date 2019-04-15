@@ -1,4 +1,4 @@
-package com.example.demo.core.constant;
+package com.example.demo.core.constant.enums;
 
 /**
  * 日志类型

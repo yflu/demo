@@ -1,9 +1,10 @@
 package com.example.demo.web.core.aop;
 
 import com.example.demo.core.common.model.response.ErrorResponseData;
+import com.example.demo.core.common.model.response.ResponseUtil;
 import com.example.demo.core.exception.ServiceException;
+import com.example.demo.core.exception.enums.CoreExceptionEnum;
 import com.example.demo.core.util.HttpContext;
-import com.example.demo.web.core.exception.BizExceptionEnum;
 import com.example.demo.web.core.exception.InvalidKaptchaException;
 import com.example.demo.web.core.log.LogManager;
 import com.example.demo.web.core.log.factory.LogTaskFactory;
@@ -11,6 +12,7 @@ import com.example.demo.web.core.shiro.util.ShiroKit;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.CredentialsException;
+import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -84,6 +86,18 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * 登录失败次数过多
+     */
+    @ExceptionHandler(ExcessiveAttemptsException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public String excessiveAttempts(ExcessiveAttemptsException e, Model model) {
+        String account = getRequest().getParameter("account");
+        LogManager.getInstance().executeLog(LogTaskFactory.loginLog(account, "登录失败次数过多", getIp()));
+        model.addAttribute("tips", "登录失败次数过多，请稍后重试");
+        return "login";
+    }
+
+    /**
      * 验证码错误异常
      */
     @ExceptionHandler(InvalidKaptchaException.class)
@@ -102,9 +116,9 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ResponseBody
     public ErrorResponseData credentials(UndeclaredThrowableException e) {
-        getRequest().setAttribute("tip", "权限异常");
-        log.error("权限异常!", e);
-        return new ErrorResponseData(BizExceptionEnum.NO_PERMITION.getCode(), BizExceptionEnum.NO_PERMITION.getMessage());
+        getRequest().setAttribute("tip", "权限不足");
+        log.error("权限不足!", e);
+        return ResponseUtil.getFail(CoreExceptionEnum.NO_PERMITION);
     }
 
     /**
@@ -121,7 +135,7 @@ public class GlobalExceptionHandler {
         if (!isAjax(request)) {
             response.sendRedirect(request.getContextPath() + "/global/error/500");
         }
-        return new ErrorResponseData(BizExceptionEnum.SERVER_ERROR.getCode(), BizExceptionEnum.SERVER_ERROR.getMessage());
+        return ResponseUtil.FAIL;
     }
 
     /**

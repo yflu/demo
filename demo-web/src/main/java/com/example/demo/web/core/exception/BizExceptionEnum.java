@@ -4,16 +4,14 @@ import com.example.demo.core.exception.AbstractBaseExceptionEnum;
 
 public enum BizExceptionEnum implements AbstractBaseExceptionEnum {
 
-    NOT_LOGIN(401, "当前用户未登录"),
-
     /**
-     * token异常
+     * 账户问题
      */
-    TOKEN_EXPIRED(700, "token过期"),
-    TOKEN_ERROR(700, "token验证失败"),
-
-    NO_PERMITION(405, "权限异常"),
-    SERVER_ERROR(500, "服务器异常");
+    USER_ALREADY_REG(1000, "该用户已经注册"),
+    USER_NOT_EXISTED(1001, "没有此用户"),
+    ACCOUNT_FREEZED(1002, "账号被冻结"),
+    OLD_PWD_NOT_RIGHT(1003, "原密码不正确"),
+    TWO_PWD_NOT_MATCH(1004, "两次输入密码不一致");
 
     BizExceptionEnum(int code, String message) {
         this.code = code;

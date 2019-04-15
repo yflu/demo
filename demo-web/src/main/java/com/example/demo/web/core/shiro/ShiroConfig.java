@@ -3,8 +3,13 @@ package com.example.demo.web.core.shiro;
 import com.example.demo.web.core.cache.redis.RedisSessionDao;
 import com.example.demo.web.core.interceptor.UserFilter;
 import com.example.demo.web.core.properties.SysProperties;
+import com.example.demo.web.core.shiro.util.ShiroKit;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.cache.CacheManager;
+import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SessionsSecurityManager;
+import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -14,10 +19,12 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.Cookie;
 import org.apache.shiro.web.servlet.ShiroHttpSession;
 import org.apache.shiro.web.servlet.SimpleCookie;
-import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.MethodInvokingFactoryBean;
+import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.cache.RedisCacheManager;
 
 import javax.servlet.Filter;
 import java.util.HashMap;
@@ -44,8 +51,9 @@ public class ShiroConfig {
      * @return
      */
     @Bean
-    public SessionManager sessionManager(SysProperties sysProperties) {
+    public SessionManager sessionManager(@Qualifier("cacheShiroManager") CacheManager cacheShiroManager, SysProperties sysProperties) {
         ShiroSessionManager sessionManager = new ShiroSessionManager();
+        sessionManager.setCacheManager(cacheShiroManager);
         sessionManager.setSessionDAO(getRedisSessionDAO());
         sessionManager.setSessionValidationInterval(sysProperties.getSessionValidationInterval() * 1000);
         sessionManager.setGlobalSessionTimeout(sysProperties.getSessionInvalidateTime() * 1000);
@@ -62,20 +70,45 @@ public class ShiroConfig {
      * 安全管理器
      */
     @Bean
-    public DefaultWebSecurityManager securityManager(CookieRememberMeManager rememberMeManager, SessionManager sessionManager) {
+    public DefaultWebSecurityManager securityManager(@Qualifier("userRealm") AuthorizingRealm realm, CookieRememberMeManager rememberMeManager, SessionManager sessionManager) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(this.userRealm());
+        securityManager.setRealm(realm);
         securityManager.setSessionManager(sessionManager);
         securityManager.setRememberMeManager(rememberMeManager);
         return securityManager;
     }
 
     /**
+     * 缓存管理器 使用Ehcache实现
+     */
+    @Bean("cacheShiroManager")
+    public CacheManager getCacheShiroManager(EhCacheManagerFactoryBean ehcache) {
+        EhCacheManager ehCacheManager = new EhCacheManager();
+        ehCacheManager.setCacheManager(ehcache.getObject());
+        return ehCacheManager;
+    }
+
+    /**
      * 项目自定义的Realm
      */
-    @Bean
-    public UserRealm userRealm() {
-        return new UserRealm();
+    @Bean("userRealm")
+    public UserRealm userRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
+        UserRealm userRealm = new UserRealm();
+        userRealm.setCredentialsMatcher(matcher);
+        return userRealm;
+    }
+
+    /**
+     * 密码匹配凭证管理器
+     *
+     * @return
+     */
+    @Bean(name = "hashedCredentialsMatcher")
+    public HashedCredentialsMatcher hashedCredentialsMatcher(CacheManager cacheShiroManager) {
+        RetryLimitHashedCredentialsMatcher md5CredentialsMatcher = new RetryLimitHashedCredentialsMatcher(cacheShiroManager);
+        md5CredentialsMatcher.setHashAlgorithmName(ShiroKit.hashAlgorithmName);
+        md5CredentialsMatcher.setHashIterations(ShiroKit.hashIterations);
+        return md5CredentialsMatcher;
     }
 
     /**

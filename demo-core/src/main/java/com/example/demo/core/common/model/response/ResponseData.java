@@ -5,14 +5,6 @@ import lombok.Data;
 @Data
 public class ResponseData {
 
-    public static final String DEFAULT_SUCCESS_MESSAGE = "请求成功";
-
-    public static final String DEFAULT_ERROR_MESSAGE = "网络异常";
-
-    public static final Integer DEFAULT_SUCCESS_CODE = 200;
-
-    public static final Integer DEFAULT_ERROR_CODE = 500;
-
     /**
      * 请求是否成功
      */

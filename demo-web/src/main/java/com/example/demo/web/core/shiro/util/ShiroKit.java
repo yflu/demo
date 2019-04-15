@@ -1,9 +1,9 @@
 package com.example.demo.web.core.shiro.util;
 
 import com.example.demo.common.entity.sys.SysUser;
-import com.example.demo.core.util.ToolUtil;
-import com.example.demo.web.core.exception.BizExceptionEnum;
 import com.example.demo.core.exception.ServiceException;
+import com.example.demo.core.exception.enums.CoreExceptionEnum;
+import com.example.demo.core.util.ToolUtil;
 import com.example.demo.web.core.shiro.model.ShiroUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -80,7 +80,7 @@ public class ShiroKit {
      */
     public static ShiroUser getUserNotNull() {
         if (isGuest()) {
-            throw new ServiceException(BizExceptionEnum.NOT_LOGIN);
+            throw new ServiceException(CoreExceptionEnum.NO_CURRENT_USER);
         } else {
             return (ShiroUser) getSubject().getPrincipals().getPrimaryPrincipal();
         }
