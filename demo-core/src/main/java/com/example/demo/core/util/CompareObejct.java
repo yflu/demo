@@ -1,4 +1,4 @@
-package com.example.demo.web;
+package com.example.demo.core.util;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
@@ -6,13 +6,21 @@ import java.lang.reflect.Method;
 
 /**
  * 对比两个对象的差值
- * Created by Administrator on 2018/7/9.
+ * Created by Administrator on 2019/4/9.
  */
 public class CompareObejct<T> {
 
     private T original;
 
     private T current;
+
+    public CompareObejct() {
+    }
+
+    public CompareObejct(T original, T current) {
+        this.original = original;
+        this.current = current;
+    }
 
     /**
      * @param cls
@@ -23,6 +31,9 @@ public class CompareObejct<T> {
         try {
             Field[] fields = cls.getDeclaredFields();
             for (Field field : fields) {
+                if ("serialVersionUID".equals(field.getName())) {
+                    continue;
+                }
                 PropertyDescriptor pd = new PropertyDescriptor(field.getName(), cls);
                 Method getMethod = pd.getReadMethod();
                 String type = field.getType().getName();
