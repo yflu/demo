@@ -1,8 +1,8 @@
 package com.example.demo.web.core.shiro;
 
-import com.example.demo.web.core.cache.redis.RedisSessionDao;
 import com.example.demo.web.core.interceptor.UserFilter;
 import com.example.demo.web.core.properties.SysProperties;
+import com.example.demo.web.core.shiro.redis.RedisSessionDao;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.CacheManager;
@@ -24,7 +24,6 @@ import org.springframework.beans.factory.config.MethodInvokingFactoryBean;
 import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.cache.RedisCacheManager;
 
 import javax.servlet.Filter;
 import java.util.HashMap;
@@ -51,14 +50,19 @@ public class ShiroConfig {
      * @return
      */
     @Bean
-    public SessionManager sessionManager(@Qualifier("cacheShiroManager") CacheManager cacheShiroManager, SysProperties sysProperties) {
+    public SessionManager sessionManager(@Qualifier("shiroRedisCacheManager") CacheManager cacheManager, SysProperties sysProperties) {
         ShiroSessionManager sessionManager = new ShiroSessionManager();
-        sessionManager.setCacheManager(cacheShiroManager);
+        sessionManager.setCacheManager(cacheManager);
         sessionManager.setSessionDAO(getRedisSessionDAO());
+        //验证是否过期
         sessionManager.setSessionValidationInterval(sysProperties.getSessionValidationInterval() * 1000);
+        //超时时间
         sessionManager.setGlobalSessionTimeout(sysProperties.getSessionInvalidateTime() * 1000);
         sessionManager.setDeleteInvalidSessions(true);
         sessionManager.setSessionValidationSchedulerEnabled(true);
+        //去掉URL中的JSESSIONID
+        sessionManager.setSessionIdUrlRewritingEnabled(false);
+        //cookie设置
         Cookie cookie = new SimpleCookie(ShiroHttpSession.DEFAULT_SESSION_ID_NAME);
         cookie.setName("shiroCookie");
         cookie.setHttpOnly(true);
@@ -81,7 +85,7 @@ public class ShiroConfig {
     /**
      * 缓存管理器 使用Ehcache实现
      */
-    @Bean("cacheShiroManager")
+    @Bean("shiroEhcacheCacheManager")
     public CacheManager getCacheShiroManager(EhCacheManagerFactoryBean ehcache) {
         EhCacheManager ehCacheManager = new EhCacheManager();
         ehCacheManager.setCacheManager(ehcache.getObject());
@@ -104,7 +108,7 @@ public class ShiroConfig {
      * @return
      */
     @Bean(name = "hashedCredentialsMatcher")
-    public HashedCredentialsMatcher hashedCredentialsMatcher(CacheManager cacheShiroManager) {
+    public HashedCredentialsMatcher hashedCredentialsMatcher(@Qualifier("shiroRedisCacheManager") CacheManager cacheShiroManager) {
         RetryLimitHashedCredentialsMatcher md5CredentialsMatcher = new RetryLimitHashedCredentialsMatcher(cacheShiroManager);
         md5CredentialsMatcher.setHashAlgorithmName(ShiroKit.hashAlgorithmName);
         md5CredentialsMatcher.setHashIterations(ShiroKit.hashIterations);

@@ -1,4 +1,4 @@
-package com.example.demo.web.core.cache.redis;
+package com.example.demo.web.core.shiro.redis;
 
 import com.example.demo.web.core.properties.SysProperties;
 import lombok.extern.slf4j.Slf4j;

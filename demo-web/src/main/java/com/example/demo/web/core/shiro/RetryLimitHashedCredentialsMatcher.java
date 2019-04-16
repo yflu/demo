@@ -12,7 +12,7 @@ import org.apache.shiro.cache.CacheManager;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 登录失败次数太多
+ * 登录失败次数太多,默认冻结30分钟
  */
 @Slf4j
 public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher {
@@ -26,21 +26,29 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
     @Override
     public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {
         String username = (String) token.getPrincipal();
-        //retry count + 1
-        AtomicInteger retryCount = passwordRetryCache.get(username);
-        if (null == retryCount) {
-            retryCount = new AtomicInteger(0);
-            passwordRetryCache.put(username, retryCount);
-        }
-        if (retryCount.incrementAndGet() > SessionConstant.LOGIN_RETRY_LIMIT) {
-            log.warn("username: " + username + " tried to login more than " + SessionConstant.LOGIN_RETRY_LIMIT + " times in period");
-            throw new ExcessiveAttemptsException("username: " + username + " tried to login more than " + SessionConstant.LOGIN_RETRY_LIMIT + " times in period");
-        }
+        incrRetryCount(passwordRetryCache, username, SessionConstant.LOGIN_RETRY_LIMIT);
         boolean matches = super.doCredentialsMatch(token, info);
         if (matches) {
-            //clear retry data
             passwordRetryCache.remove(username);
         }
         return matches;
+    }
+
+    /**
+     * 尝试次数+1，超过retryLimit 抛异常
+     *
+     * @param retryCache
+     * @param retryCountKey
+     */
+    private void incrRetryCount(Cache<String, AtomicInteger> retryCache, String retryCountKey, int retryLimit) {
+        AtomicInteger retryCount = retryCache.get(retryCountKey);
+        if (retryCount == null) {
+            retryCount = new AtomicInteger(0);
+        }
+        if (retryCount.incrementAndGet() > retryLimit) {
+            log.warn("username: " + retryCountKey + " tried to login more than " + SessionConstant.LOGIN_RETRY_LIMIT + " times in period");
+            throw new ExcessiveAttemptsException("username: " + retryCountKey + " tried to login more than " + SessionConstant.LOGIN_RETRY_LIMIT + " times in period");
+        }
+        retryCache.put(retryCountKey, retryCount);
     }
 }
