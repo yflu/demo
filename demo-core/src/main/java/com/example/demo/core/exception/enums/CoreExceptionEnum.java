@@ -9,6 +9,7 @@ public enum CoreExceptionEnum implements AbstractBaseExceptionEnum {
      */
     SUCCESS(0, "请求成功"),
     SERVER_ERROR(1, "未知错误"),
+    LOGIN_ERROR(2, "登录失败"),
 
     REQUEST_REPEAT(100, "重复请求"),
     REQUEST_PARAM_ERROR(101, "请求参数异常"),

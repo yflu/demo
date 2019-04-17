@@ -6,9 +6,10 @@ import com.example.demo.common.service.sys.ISysUserService;
 import com.example.demo.core.common.annotion.BussinessLog;
 import com.example.demo.web.core.log.LogManager;
 import com.example.demo.web.core.log.factory.LogTaskFactory;
-import com.example.demo.web.core.shiro.util.ShiroKit;
 import com.example.demo.web.core.shiro.model.ShiroUser;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import com.example.demo.web.core.shiro.multRealm.LoginService;
+import com.example.demo.web.core.shiro.multRealm.MyUsernamePasswordToken;
+import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import static com.example.demo.core.util.HttpContext.getIp;
 
 @Controller
@@ -24,6 +28,8 @@ public class LoginController extends BaseController {
 
     @Autowired
     private ISysUserService sysUserService;
+    @Autowired
+    private LoginService loginService;
 
     @GetMapping("/login")
     public String login() {
@@ -32,16 +38,11 @@ public class LoginController extends BaseController {
 
     @PostMapping("/login")
     @BussinessLog(value = "login", key = "userId", cls = SysUser.class)
-    public Object loginSubmit(SysUser user, String remember) {
+    public Object loginSubmit(HttpServletRequest request, HttpServletResponse response) {
         Subject currentUser = ShiroKit.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(user.getAccount(), user.getPassword().toCharArray());
 
-        //如果开启了记住我功能
-        if ("on".equals(remember)) {
-            token.setRememberMe(true);
-        } else {
-            token.setRememberMe(false);
-        }
+        //MyUsernamePasswordToken token = new MyUsernamePasswordToken(user.getAccount(), user.getPassword(), "on".equals(remember), ToolUtil.getIP(), LoginType.USERNAME_PASSWORD);
+        MyUsernamePasswordToken token = loginService.createToken(request, response);
 
         //执行shiro登录操作
         currentUser.login(token);

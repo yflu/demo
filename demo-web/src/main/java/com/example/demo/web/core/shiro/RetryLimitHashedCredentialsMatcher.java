@@ -46,8 +46,8 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
             retryCount = new AtomicInteger(0);
         }
         if (retryCount.incrementAndGet() > retryLimit) {
-            log.warn("username: " + retryCountKey + " tried to login more than " + SessionConstant.LOGIN_RETRY_LIMIT + " times in period");
-            throw new ExcessiveAttemptsException("username: " + retryCountKey + " tried to login more than " + SessionConstant.LOGIN_RETRY_LIMIT + " times in period");
+            log.warn("username: " + retryCountKey + " tried to login more than " + retryLimit + " times in period");
+            throw new ExcessiveAttemptsException("username: " + retryCountKey + " tried to login more than " + retryLimit + " times in period");
         }
         retryCache.put(retryCountKey, retryCount);
     }

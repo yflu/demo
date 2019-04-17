@@ -2,8 +2,11 @@ package com.example.demo.web.core.shiro;
 
 import com.example.demo.common.entity.sys.SysUser;
 import com.example.demo.common.service.sys.ISysUserService;
+import com.example.demo.core.constant.enums.DataStatus;
+import com.example.demo.core.constant.enums.LoginType;
 import com.example.demo.core.util.SpringContextHolder;
 import com.example.demo.web.core.shiro.model.ShiroUser;
+import com.example.demo.web.core.shiro.multRealm.MyUsernamePasswordToken;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -26,6 +29,12 @@ public class UserRealm extends AuthorizingRealm {
             throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
         SysUser user = SpringContextHolder.getBean(ISysUserService.class).getByAccount(token.getUsername());
+        if (null == user) {
+            throw new UnknownAccountException();
+        }
+        if (DataStatus.DISABLE.getCode() == user.getStatus()) {
+            throw new LockedAccountException();
+        }
         ShiroUser shiroUser = ShiroKit.createShiroUser(user);
         return getAuthInfo(shiroUser, user, super.getName());
     }
@@ -47,17 +56,6 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     /**
-     * 设置认证加密方式
-     */
-    /*@Override
-    public void setCredentialsMatcher(CredentialsMatcher credentialsMatcher) {
-        HashedCredentialsMatcher md5CredentialsMatcher = new HashedCredentialsMatcher();
-        md5CredentialsMatcher.setHashAlgorithmName(ShiroKit.hashAlgorithmName);
-        md5CredentialsMatcher.setHashIterations(ShiroKit.hashIterations);
-        super.setCredentialsMatcher(md5CredentialsMatcher);
-    }
-*/
-    /**
      * 获取shiro的认证信息
      */
     public SimpleAuthenticationInfo getAuthInfo(ShiroUser shiroUser, SysUser user, String realmName) {
@@ -66,5 +64,21 @@ public class UserRealm extends AuthorizingRealm {
         String source = user.getSalt();
         ByteSource credentialsSalt = new Md5Hash(source);
         return new SimpleAuthenticationInfo(shiroUser, credentials, credentialsSalt, realmName);
+    }
+
+    @Override
+    public boolean supports(AuthenticationToken token) {
+        if (token instanceof MyUsernamePasswordToken) {
+            MyUsernamePasswordToken usernamePasswordToken = (MyUsernamePasswordToken) token;
+            return LoginType.USERNAME_PASSWORD == usernamePasswordToken.getLoginType();
+        }
+        return false;
+    }
+
+    @Override
+    protected void assertCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) throws AuthenticationException {
+        /*SimpleAuthenticationInfo simpleAuthenticationInfo = (SimpleAuthenticationInfo) info;
+        throw new LockedAccountException();*/
+        super.assertCredentialsMatch(token, info);
     }
 }

@@ -2,14 +2,22 @@ package com.example.demo.web.core.shiro;
 
 import com.example.demo.web.core.interceptor.UserFilter;
 import com.example.demo.web.core.properties.SysProperties;
+import com.example.demo.web.core.shiro.multRealm.AbstractAuthorizingRealm;
+import com.example.demo.web.core.shiro.multRealm.MyModularRealmAuthenticator;
+import com.example.demo.web.core.shiro.multRealm.MyModularRealmAuthorizer;
+import com.example.demo.web.core.shiro.multRealm.realms.MobileVerifyCodeRealm;
+import com.example.demo.web.core.shiro.multRealm.realms.UsernamePasswordRealm;
 import com.example.demo.web.core.shiro.redis.RedisSessionDao;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
+import org.apache.shiro.authz.ModularRealmAuthorizer;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SessionsSecurityManager;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -21,14 +29,14 @@ import org.apache.shiro.web.servlet.ShiroHttpSession;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.MethodInvokingFactoryBean;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.filter.DelegatingFilterProxy;
 
 import javax.servlet.Filter;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 import static com.example.demo.web.core.common.Const.NONE_PERMISSION_RES;
 
@@ -45,44 +53,6 @@ public class ShiroConfig {
     }
 
     /**
-     * session管理器
-     *
-     * @return
-     */
-    @Bean
-    public SessionManager sessionManager(@Qualifier("shiroRedisCacheManager") CacheManager cacheManager, SysProperties sysProperties) {
-        ShiroSessionManager sessionManager = new ShiroSessionManager();
-        sessionManager.setCacheManager(cacheManager);
-        sessionManager.setSessionDAO(getRedisSessionDAO());
-        //验证是否过期
-        sessionManager.setSessionValidationInterval(sysProperties.getSessionValidationInterval() * 1000);
-        //超时时间
-        sessionManager.setGlobalSessionTimeout(sysProperties.getSessionInvalidateTime() * 1000);
-        sessionManager.setDeleteInvalidSessions(true);
-        sessionManager.setSessionValidationSchedulerEnabled(true);
-        //去掉URL中的JSESSIONID
-        sessionManager.setSessionIdUrlRewritingEnabled(false);
-        //cookie设置
-        Cookie cookie = new SimpleCookie(ShiroHttpSession.DEFAULT_SESSION_ID_NAME);
-        cookie.setName("shiroCookie");
-        cookie.setHttpOnly(true);
-        sessionManager.setSessionIdCookie(cookie);
-        return sessionManager;
-    }
-
-    /**
-     * 安全管理器
-     */
-    @Bean
-    public DefaultWebSecurityManager securityManager(@Qualifier("userRealm") AuthorizingRealm realm, CookieRememberMeManager rememberMeManager, SessionManager sessionManager) {
-        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(realm);
-        securityManager.setSessionManager(sessionManager);
-        securityManager.setRememberMeManager(rememberMeManager);
-        return securityManager;
-    }
-
-    /**
      * 缓存管理器 使用Ehcache实现
      */
     @Bean("shiroEhcacheCacheManager")
@@ -90,16 +60,6 @@ public class ShiroConfig {
         EhCacheManager ehCacheManager = new EhCacheManager();
         ehCacheManager.setCacheManager(ehcache.getObject());
         return ehCacheManager;
-    }
-
-    /**
-     * 项目自定义的Realm
-     */
-    @Bean("userRealm")
-    public UserRealm userRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
-        UserRealm userRealm = new UserRealm();
-        userRealm.setCredentialsMatcher(matcher);
-        return userRealm;
     }
 
     /**
@@ -138,9 +98,35 @@ public class ShiroConfig {
     }
 
     /**
-     * Shiro的过滤器链
+     * session管理器
+     *
+     * @return
      */
     @Bean
+    public SessionManager sessionManager(@Qualifier("shiroRedisCacheManager") CacheManager cacheManager, SysProperties sysProperties) {
+        ShiroSessionManager sessionManager = new ShiroSessionManager();
+        sessionManager.setCacheManager(cacheManager);
+        sessionManager.setSessionDAO(getRedisSessionDAO());
+        //验证是否过期
+        sessionManager.setSessionValidationInterval(sysProperties.getSessionValidationInterval() * 1000);
+        //超时时间
+        sessionManager.setGlobalSessionTimeout(sysProperties.getSessionInvalidateTime() * 1000);
+        sessionManager.setDeleteInvalidSessions(true);
+        sessionManager.setSessionValidationSchedulerEnabled(true);
+        //去掉URL中的JSESSIONID
+        sessionManager.setSessionIdUrlRewritingEnabled(false);
+        //cookie设置
+        Cookie cookie = new SimpleCookie(ShiroHttpSession.DEFAULT_SESSION_ID_NAME);
+        cookie.setName("shiroCookie");
+        cookie.setHttpOnly(true);
+        sessionManager.setSessionIdCookie(cookie);
+        return sessionManager;
+    }
+
+    /**
+     * Shiro的过滤器链
+     */
+    @Bean("shiroFilter")
     public ShiroFilterFactoryBean shiroFilter(SessionsSecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
         shiroFilter.setSecurityManager(securityManager);
@@ -182,9 +168,70 @@ public class ShiroConfig {
         for (String nonePermissionRe : NONE_PERMISSION_RES) {
             hashMap.put(nonePermissionRe, "anon");
         }
+        //配置退出过滤器
+        hashMap.put("/logout", "logout");
         hashMap.put("/**", "user");
         shiroFilter.setFilterChainDefinitionMap(hashMap);
         return shiroFilter;
+    }
+
+    @Bean
+    public FilterRegistrationBean delegatingFilterProxy() {
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        DelegatingFilterProxy proxy = new DelegatingFilterProxy();
+        proxy.setTargetFilterLifecycle(true);
+        proxy.setTargetBeanName("shiroFilter");
+        filterRegistrationBean.setFilter(proxy);
+        return filterRegistrationBean;
+    }
+
+    /**
+     * 项目自定义的Realm
+     */
+    @Bean("userRealm")
+    public UserRealm userRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
+        UserRealm userRealm = new UserRealm();
+        userRealm.setCredentialsMatcher(matcher);
+        return userRealm;
+    }
+
+    @Bean("usernamePasswordRealm")
+    public AbstractAuthorizingRealm getUsernamePasswordRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
+        UsernamePasswordRealm realm = new UsernamePasswordRealm();
+        realm.setCredentialsMatcher(matcher);
+        return realm;
+    }
+
+    @Bean
+    public AbstractAuthorizingRealm getMobileVerifyCodeRealm() {
+        return new MobileVerifyCodeRealm();
+    }
+
+    @Bean
+    public ModularRealmAuthenticator getModularRealmAuthenticator() {
+        return new MyModularRealmAuthenticator();
+    }
+
+    @Bean
+    public ModularRealmAuthorizer getModularRealmAuthorizer() {
+        return new MyModularRealmAuthorizer();
+    }
+
+    /**
+     * 安全管理器
+     */
+    @Bean
+    public DefaultWebSecurityManager securityManager(@Qualifier("usernamePasswordRealm") AuthorizingRealm usernamePasswordRealm, CookieRememberMeManager rememberMeManager, SessionManager sessionManager) {
+        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+        securityManager.setAuthenticator(getModularRealmAuthenticator());
+        securityManager.setAuthorizer(getModularRealmAuthorizer());
+        List<Realm> realms = new ArrayList<>();
+        realms.add(usernamePasswordRealm);
+        realms.add(getMobileVerifyCodeRealm());
+        securityManager.setRealms(realms);
+        securityManager.setSessionManager(sessionManager);
+        securityManager.setRememberMeManager(rememberMeManager);
+        return securityManager;
     }
 
     /**

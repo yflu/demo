@@ -11,6 +11,7 @@
 
 <body class="layui-layout-body">
 <form class="layui-card-body layui-form layui-form-pane" action="${ctxPath}/login" method="post">
+    <input type="hidden" value="USERNAME_PASSWORD" name="loginType">
     <div class="layui-form-item">
         <label class="layui-form-label">账号</label>
         <div class="layui-input-block">
@@ -26,8 +27,8 @@
     <div class="layui-form-item" pane="">
         <label class="layui-form-label" lay-tips="7天内免登陆">记住我</label>
         <div class="layui-input-block">
-            <input type="radio" name="remember" value="on" title="是">
-            <input type="radio" name="remember" value="off" title="否" checked="">
+            <input type="radio" name="rememberMe" value="on" title="是">
+            <input type="radio" name="rememberMe" value="off" title="否" checked="">
         </div>
     </div>
     <div class="layui-form-item">

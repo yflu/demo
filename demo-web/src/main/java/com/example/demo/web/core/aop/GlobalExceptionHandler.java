@@ -10,10 +10,7 @@ import com.example.demo.web.core.log.LogManager;
 import com.example.demo.web.core.log.factory.LogTaskFactory;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.CredentialsException;
-import org.apache.shiro.authc.ExcessiveAttemptsException;
-import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.*;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
@@ -76,7 +73,7 @@ public class GlobalExceptionHandler {
     /**
      * 账号密码错误异常
      */
-    @ExceptionHandler(CredentialsException.class)
+    @ExceptionHandler({CredentialsException.class, UnknownAccountException.class})
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public String credentials(CredentialsException e, Model model) {
         String account = getRequest().getParameter("account");
