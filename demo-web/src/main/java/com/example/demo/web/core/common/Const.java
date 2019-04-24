@@ -50,6 +50,6 @@ public interface Const {
     /**
      * 不需要权限验证的资源表达式
      */
-    List<String> NONE_PERMISSION_RES = CollectionUtil.newLinkedList("/static/**", "/api/**", "/login", "/global/sessionError", "/kaptcha", "/error", "/global/error/**");
+    List<String> NONE_PERMISSION_RES = CollectionUtil.newLinkedList("/static/**", "/api/**", "/global/sessionError", "/kaptcha", "/error", "/global/error/**");
 
 }

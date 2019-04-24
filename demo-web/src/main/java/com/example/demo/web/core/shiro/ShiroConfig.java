@@ -1,12 +1,15 @@
 package com.example.demo.web.core.shiro;
 
-import com.example.demo.web.core.interceptor.UserFilter;
 import com.example.demo.web.core.properties.SysProperties;
+import com.example.demo.web.core.shiro.filter.MyFormAuthenticationFilter;
+import com.example.demo.web.core.shiro.filter.TokenAuthenticationFilter;
+import com.example.demo.web.core.shiro.filter.WebUserFilter;
 import com.example.demo.web.core.shiro.multRealm.AbstractAuthorizingRealm;
 import com.example.demo.web.core.shiro.multRealm.MyModularRealmAuthenticator;
 import com.example.demo.web.core.shiro.multRealm.MyModularRealmAuthorizer;
 import com.example.demo.web.core.shiro.multRealm.realms.MobileVerifyCodeRealm;
 import com.example.demo.web.core.shiro.multRealm.realms.UsernamePasswordRealm;
+import com.example.demo.web.core.shiro.multRealm.realms.WeixinOpenIdRealm;
 import com.example.demo.web.core.shiro.redis.RedisSessionDao;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -22,6 +25,7 @@ import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.Cookie;
@@ -46,10 +50,64 @@ import static com.example.demo.web.core.common.Const.NONE_PERMISSION_RES;
 @Configuration
 public class ShiroConfig {
 
-
     @Bean
     public RedisSessionDao getRedisSessionDAO() {
         return new RedisSessionDao();
+    }
+
+    /**
+     * 项目自定义的Realm
+     */
+    @Bean("userRealm")
+    public UserRealm userRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
+        UserRealm userRealm = new UserRealm();
+        userRealm.setCredentialsMatcher(matcher);
+        return userRealm;
+    }
+
+    @Bean("usernamePasswordRealm")
+    public AbstractAuthorizingRealm getUsernamePasswordRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
+        UsernamePasswordRealm realm = new UsernamePasswordRealm();
+        realm.setCredentialsMatcher(matcher);
+        return realm;
+    }
+
+    @Bean
+    public AbstractAuthorizingRealm getWeixinOpenIdRealm() {
+        return new WeixinOpenIdRealm();
+    }
+
+    @Bean
+    public AbstractAuthorizingRealm getMobileVerifyCodeRealm() {
+        return new MobileVerifyCodeRealm();
+    }
+
+    @Bean
+    public ModularRealmAuthenticator getModularRealmAuthenticator() {
+        return new MyModularRealmAuthenticator();
+    }
+
+    @Bean
+    public ModularRealmAuthorizer getModularRealmAuthorizer() {
+        return new MyModularRealmAuthorizer();
+    }
+
+    /**
+     * 安全管理器
+     */
+    @Bean
+    public DefaultWebSecurityManager securityManager(@Qualifier("usernamePasswordRealm") AuthorizingRealm usernamePasswordRealm, CookieRememberMeManager rememberMeManager, SessionManager sessionManager) {
+        MyWebSecurityManager securityManager = new MyWebSecurityManager();
+        securityManager.setAuthenticator(getModularRealmAuthenticator());
+        securityManager.setAuthorizer(getModularRealmAuthorizer());
+        List<Realm> realms = new ArrayList<>();
+        realms.add(usernamePasswordRealm);
+        realms.add(getMobileVerifyCodeRealm());
+        realms.add(getWeixinOpenIdRealm());
+        securityManager.setRealms(realms);
+        securityManager.setSessionManager(sessionManager);
+        securityManager.setRememberMeManager(rememberMeManager);
+        return securityManager;
     }
 
     /**
@@ -123,6 +181,16 @@ public class ShiroConfig {
         return sessionManager;
     }
 
+    @Bean
+    public AuthenticatingFilter getFormAuthenticationFilter() {
+        return new MyFormAuthenticationFilter();
+    }
+
+    @Bean
+    public AuthenticatingFilter getTokenAuthenticationFilter() {
+        return new TokenAuthenticationFilter();
+    }
+
     /**
      * Shiro的过滤器链
      */
@@ -147,7 +215,9 @@ public class ShiroConfig {
          * 覆盖默认的user拦截器(默认拦截器解决不了ajax请求 session超时的问题)
          */
         HashMap<String, Filter> myFilters = new HashMap<>();
-        myFilters.put("user", new UserFilter());
+        myFilters.put("user", new WebUserFilter());
+        myFilters.put("authc", getFormAuthenticationFilter());
+        myFilters.put("token", getTokenAuthenticationFilter());
         shiroFilter.setFilters(myFilters);
 
         /**
@@ -168,8 +238,11 @@ public class ShiroConfig {
         for (String nonePermissionRe : NONE_PERMISSION_RES) {
             hashMap.put(nonePermissionRe, "anon");
         }
+
         //配置退出过滤器
         hashMap.put("/logout", "logout");
+        hashMap.put("/token/**", "token");
+        hashMap.put("/login", "authc");
         hashMap.put("/**", "user");
         shiroFilter.setFilterChainDefinitionMap(hashMap);
         return shiroFilter;
@@ -183,55 +256,6 @@ public class ShiroConfig {
         proxy.setTargetBeanName("shiroFilter");
         filterRegistrationBean.setFilter(proxy);
         return filterRegistrationBean;
-    }
-
-    /**
-     * 项目自定义的Realm
-     */
-    @Bean("userRealm")
-    public UserRealm userRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
-        UserRealm userRealm = new UserRealm();
-        userRealm.setCredentialsMatcher(matcher);
-        return userRealm;
-    }
-
-    @Bean("usernamePasswordRealm")
-    public AbstractAuthorizingRealm getUsernamePasswordRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
-        UsernamePasswordRealm realm = new UsernamePasswordRealm();
-        realm.setCredentialsMatcher(matcher);
-        return realm;
-    }
-
-    @Bean
-    public AbstractAuthorizingRealm getMobileVerifyCodeRealm() {
-        return new MobileVerifyCodeRealm();
-    }
-
-    @Bean
-    public ModularRealmAuthenticator getModularRealmAuthenticator() {
-        return new MyModularRealmAuthenticator();
-    }
-
-    @Bean
-    public ModularRealmAuthorizer getModularRealmAuthorizer() {
-        return new MyModularRealmAuthorizer();
-    }
-
-    /**
-     * 安全管理器
-     */
-    @Bean
-    public DefaultWebSecurityManager securityManager(@Qualifier("usernamePasswordRealm") AuthorizingRealm usernamePasswordRealm, CookieRememberMeManager rememberMeManager, SessionManager sessionManager) {
-        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setAuthenticator(getModularRealmAuthenticator());
-        securityManager.setAuthorizer(getModularRealmAuthorizer());
-        List<Realm> realms = new ArrayList<>();
-        realms.add(usernamePasswordRealm);
-        realms.add(getMobileVerifyCodeRealm());
-        securityManager.setRealms(realms);
-        securityManager.setSessionManager(sessionManager);
-        securityManager.setRememberMeManager(rememberMeManager);
-        return securityManager;
     }
 
     /**

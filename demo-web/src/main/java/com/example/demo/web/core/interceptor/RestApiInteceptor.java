@@ -4,7 +4,7 @@ import com.example.demo.core.common.model.response.ErrorResponseData;
 import com.example.demo.core.exception.enums.CoreExceptionEnum;
 import com.example.demo.core.util.RenderUtil;
 import com.example.demo.web.core.jwt.JwtConstants;
-import com.example.demo.web.core.jwt.JwtTokenUtil;
+import com.example.demo.web.core.jwt.JwtUtil;
 import io.jsonwebtoken.JwtException;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -36,7 +36,7 @@ public class RestApiInteceptor extends HandlerInterceptorAdapter {
 
             //验证token是否过期,包含了验证jwt是否正确
             try {
-                boolean flag = JwtTokenUtil.isTokenExpired(authToken);
+                boolean flag = JwtUtil.isTokenExpired(authToken);
                 if (flag) {
                     RenderUtil.renderJson(response, new ErrorResponseData(CoreExceptionEnum.TOKEN_EXPIRED.getCode(), CoreExceptionEnum.TOKEN_EXPIRED.getMessage()));
                     return false;

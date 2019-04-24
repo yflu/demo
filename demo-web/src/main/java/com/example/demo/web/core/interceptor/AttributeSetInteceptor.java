@@ -1,5 +1,8 @@
 package com.example.demo.web.core.interceptor;
 
+import com.example.demo.web.core.shiro.model.ShiroUser;
+import com.example.demo.web.core.shiro.util.ShiroKit;
+import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -25,14 +28,14 @@ public class AttributeSetInteceptor extends HandlerInterceptorAdapter {
             return;
         }
 
-        /*ShiroUser user = ShiroKit.getUser();
+        ShiroUser user = ShiroKit.getUser();
 
         if (user == null) {
             throw new AuthenticationException("当前没有登录账号！");
         } else {
             modelAndView.addObject("name", user.getName());
-            modelAndView.addObject("avatar", DefaultImages.defaultAvatarUrl());
-            modelAndView.addObject("email", user.getEmail());
-        }*/
+            //modelAndView.addObject("avatar", DefaultImages.defaultAvatarUrl());
+            //modelAndView.addObject("email", user.getEmail());
+        }
     }
 }

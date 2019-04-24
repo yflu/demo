@@ -1,4 +1,4 @@
-package com.example.demo.web.core.interceptor;
+package com.example.demo.web.core.shiro.filter;
 
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.subject.Subject;
@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UserFilter extends AccessControlFilter {
+    public class WebUserFilter extends AccessControlFilter {
 
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         if (isLoginRequest(request, response)) {

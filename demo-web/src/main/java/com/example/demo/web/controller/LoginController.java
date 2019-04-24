@@ -39,13 +39,13 @@ public class LoginController extends BaseController {
     @PostMapping("/login")
     @BussinessLog(value = "login", key = "userId", cls = SysUser.class)
     public Object loginSubmit(HttpServletRequest request, HttpServletResponse response) {
-        Subject currentUser = ShiroKit.getSubject();
+        //Subject currentUser = ShiroKit.getSubject();
 
         //MyUsernamePasswordToken token = new MyUsernamePasswordToken(user.getAccount(), user.getPassword(), "on".equals(remember), ToolUtil.getIP(), LoginType.USERNAME_PASSWORD);
-        MyUsernamePasswordToken token = loginService.createToken(request, response);
+        //MyUsernamePasswordToken token = loginService.createToken(request, response);
 
         //执行shiro登录操作
-        currentUser.login(token);
+        //currentUser.login(token);
 
         //登录成功，记录登录日志
         ShiroUser shiroUser = ShiroKit.getUserNotNull();

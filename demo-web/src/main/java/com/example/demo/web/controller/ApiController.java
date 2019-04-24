@@ -5,7 +5,7 @@ import com.example.demo.common.entity.sys.SysUser;
 import com.example.demo.common.service.sys.ISysUserService;
 import com.example.demo.core.common.model.response.ErrorResponseData;
 import com.example.demo.core.common.model.response.ResponseUtil;
-import com.example.demo.web.core.jwt.JwtTokenUtil;
+import com.example.demo.web.core.jwt.JwtUtil;
 import com.example.demo.web.core.shiro.model.ShiroUser;
 import com.example.demo.web.core.shiro.util.ShiroKit;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
 
 /**
  * 接口控制器提供
@@ -60,7 +58,7 @@ public class ApiController extends BaseController {
                 usernamePasswordToken, simpleAuthenticationInfo);
 
         if (passwordTrueFlag) {
-            return ResponseUtil.getSuccess(JwtTokenUtil.generateToken(String.valueOf(user.getUserId())));
+            return ResponseUtil.getSuccess(JwtUtil.generateToken(String.valueOf(user.getUserId())));
         } else {
             return new ErrorResponseData(500, "账号密码错误！");
         }

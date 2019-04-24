@@ -21,7 +21,6 @@ public class ShiroSessionManager extends DefaultWebSessionManager {
     @Override
     protected Session retrieveSession(SessionKey sessionKey) throws UnknownSessionException {
         Serializable sessionId = getSessionId(sessionKey);
-
         ServletRequest request = null;
         if (sessionKey instanceof WebSessionKey) {
             request = ((WebSessionKey) sessionKey).getServletRequest();

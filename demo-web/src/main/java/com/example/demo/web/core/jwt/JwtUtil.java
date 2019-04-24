@@ -18,7 +18,7 @@ import java.util.Map;
  * 6. iat -- jwt发布时间
  * 7. jti -- jwt唯一标识,防止重复使用
  */
-public class JwtTokenUtil {
+public class JwtUtil {
 
     /**
      * 获取用户名从token中
